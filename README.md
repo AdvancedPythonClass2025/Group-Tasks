@@ -59,6 +59,29 @@ git push origin task/group-<number>/feature-name
    - Ensures all contributions are properly integrated
    - Creates the final pull request to main branch
 
+## Group Folder Structure
+
+### Setting Up Your Group Folder
+1. Copy the `group-readme-template.md` to your group's folder
+2. Rename it to `README.md`
+3. Fill in your group's information
+4. Update it after completing each task
+
+### Folder Organization
+```
+group-[number]/
+├── README.md           # Group progress tracking document
+├── Session-1/             # Each task in its own folder
+│   ├── src/
+│   ├── tests/
+│   └── README.md      # Task-specific documentation
+├── Session-2/
+│   ├── src/
+│   ├── tests/
+│   └── README.md
+...
+```
+
 ## Important Notes
 
 - ⚠️ Never commit directly to the main branch
