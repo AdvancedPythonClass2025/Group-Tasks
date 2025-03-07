@@ -11,9 +11,10 @@ def get_name():
 def get_phone_number():
     while True:
         try:
-           phone_number = input("enter your phone number: ").strip()
+            phone_number = input("enter your phone number: ").strip()
             if not phone_number.isdigit():#چک میکنه که شماره تلفن وارد شده فقط حاوی عدد باشه 
                 raise ValueError("phone number should contain only digits.")
+                
             if len(phone_number) != 11: #چک میکنه که شماره تلفن حتما 11 رقم باشه 
                 raise ValueError("phone number must be exactly 11 digits.")
             return phone_number
