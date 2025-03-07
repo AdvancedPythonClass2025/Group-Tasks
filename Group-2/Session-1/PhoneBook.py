@@ -7,3 +7,35 @@ def get_name():
             return name
         except ValueError as e:
             print(f"invalid input: {e}")
+
+
+
+def phone_book():
+    users = {}  # دیکشنری برای اختصاص دادن شماره به هر فرد و ذخیره مخاطبین
+
+    while True:
+        print("\n1. add a new contact")
+        print("2. view all contacts")
+        print("3. exit")
+        choice = input("Choose an option (1,2,3): ").strip()
+
+        if choice == "1":        # اضافه کردن اسم و شماره تلفن به دیکشنری
+            name = get_name()
+            phone_number = get_phone_number()
+            users[name] = phone_number  
+            print(f"contact '{name}' added to your phonebook")
+
+        elif choice == "2":     #نمایش لیست افراد ثبت شده 
+            if not users:
+                print("contact list is empty.")
+            else:
+                print("\nlist of contacts:")
+                for name, phone_number in users.items():
+                    print(f"name: {name}, phone Number: {phone_number}")
+
+        elif choice == "3":     #خروج از برنامه
+            print("goodbye.")
+            break
+
+        else:
+            print("please choose 1 , 2 or 3")
