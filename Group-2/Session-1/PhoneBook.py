@@ -20,7 +20,6 @@ def get_phone_number():
         except ValueError as e:
             print(f"invalid input: {e}")
 
-
 def phone_book():
     users = {}  # دیکشنری برای اختصاص دادن شماره به هر فرد و ذخیره مخاطبین
 
@@ -50,3 +49,4 @@ def phone_book():
 
         else:
             print("please choose 1 , 2 or 3")
+phone_book()
