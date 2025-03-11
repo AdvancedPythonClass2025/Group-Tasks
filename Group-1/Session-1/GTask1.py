@@ -37,5 +37,19 @@ def AgeInpt():
 def EmailInpt():
     #baraye gereftan vrodi email hast
     print("")
+
+form = f"""
+
+name  : {name}
+
+age   :
+
+email :
+
+       """
+
 #CClear()
 #NameInpt()
+#AgeInpt()
+#EmailInpt()
+#print(form)
