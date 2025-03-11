@@ -43,12 +43,16 @@ def EmailInpt(email:str):
 try :
     user = input("email ra vared konid : ")
     re = EmailInpt(user)
-    if not user[0].upper():
-        print("harf aval bayad bozorg bashad")
-    elif  user in ["@",".","-","_"]:
-        print("harf namotabar ast")
-except:
-    pass
+    if not user[0].isalpha():
+        print("email bayad ba character shoro shavad")
+    if not any(char.isalpha() for char in user) or not any(char.isdigit() for char in user):
+        print("email bayad tarkibi az horof va adad bashand")
+    elif user in ["@",".","-","_"]:
+        print("vorodi namotabar ast")
+    else :
+        print(re)
+except Exception as eror:
+    print(f"khatay nashenakhteh : {eror}")
 
 #CClear()
 #NameInpt()
