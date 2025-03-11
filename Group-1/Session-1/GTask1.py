@@ -19,7 +19,7 @@ def NameInpt():
         print("lotfan vrodi ra ba horof por konid\n\n")
         NameInpt()
 
-    elif all(char.isalpha() or char.isspace() for char in x): 
+    elif all(harf.isalpha() or harf.isspace() for harf in x): 
 
         
         name = x  
@@ -37,17 +37,17 @@ def AgeInpt():
 def EmailInpt(email:str):
     #baraye gereftan vrodi email hast
     if len(email) <= 4 :
-        return "email bayad bishtar az 4 character bashad"
-    if not any(char.isalpha() for char in user) or not any(char.isdigit() for char in user):
+        return "email bayad bishtar az 4 charaacter bashad"
+    if not any(harf.isalpha() for harf in Uinput) or not any(harf.isdigit() for harf in Uinput):
         return("email bayad tarkibi az horof va adad bashand")
     else :
         return f"{email}@gmail.com"
 try :
-    user = input("email ra vared konid : ")
-    re = EmailInpt(user)
-    if not user[0].isalpha():
+    Uinput = input("email ra vared konid : ")
+    re = EmailInpt(Uinput)
+    if not Uinput[0].isalpha():
         print("email bayad ba character shoro shavad")
-    elif any(char in ["@",".","-","_"] for char in user):
+    elif any(harf in ["@",".","-","_"] for harf in Uinput):
         print("vorodi namotabar ast")
     else :
         print(re)
