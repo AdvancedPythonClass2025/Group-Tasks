@@ -38,6 +38,8 @@ def EmailInpt(email:str):
     #baraye gereftan vrodi email hast
     if len(email) <= 4 :
         return "email bayad bishtar az 4 character bashad"
+    if not any(char.isalpha() for char in user) or not any(char.isdigit() for char in user):
+        return("email bayad tarkibi az horof va adad bashand")
     else :
         return f"{email}@gmail.com"
 try :
@@ -45,9 +47,7 @@ try :
     re = EmailInpt(user)
     if not user[0].isalpha():
         print("email bayad ba character shoro shavad")
-    if not any(char.isalpha() for char in user) or not any(char.isdigit() for char in user):
-        print("email bayad tarkibi az horof va adad bashand")
-    elif user in ["@",".","-","_"]:
+    elif any(char in ["@",".","-","_"] for char in user):
         print("vorodi namotabar ast")
     else :
         print(re)
