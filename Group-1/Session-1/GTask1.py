@@ -34,25 +34,8 @@ def AgeInpt():
     #baraye gereftan vrodi sen hast
     print("")
 
-def EmailInpt(email:str):
+def EmailInpt():
     #baraye gereftan vrodi email hast
-    if len(email) <= 4 :
-        return "email bayad bishtar az 4 charaacter bashad"
-    if not any(harf.isalpha() for harf in Uinput) or not any(harf.isdigit() for harf in Uinput):
-        return("email bayad tarkibi az horof va adad bashand")
-    else :
-        return f"{email}@gmail.com"
-try :
-    Uinput = input("email ra vared konid : ")
-    re = EmailInpt(Uinput)
-    if not Uinput[0].isalpha():
-        print("email bayad ba character shoro shavad")
-    elif any(harf in ["@",".","-","_"] for harf in Uinput):
-        print("vorodi namotabar ast")
-    else :
-        print(re)
-except Exception as eror:
-    print(f"khatay nashenakhteh : {eror}")
-
+    print("")
 #CClear()
 #NameInpt()
