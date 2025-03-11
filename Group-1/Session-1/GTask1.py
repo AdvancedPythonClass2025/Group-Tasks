@@ -37,19 +37,18 @@ def AgeInpt():
 def EmailInpt(email:str):
     #baraye gereftan vrodi email hast
     if len(email) <= 4 :
-        return "email bayad bishtar az 4 har bashad"
-    elif not email.isalnum() :
-        return "email bayad tarkibi az horof va adad bashad"
-    elif not email[0].isalpha() :
-        return "harf aval email bayad bozorg bashad"
-
-    elif email in ["@",".","-","_"] :
-        return "namotabar ast"
-    return f"{email}@gmail.com"
-user = input("email ra vared konid : ")
-result = EmailInpt(user)
-print(result)
-
+        return "email bayad bishtar az 4 character bashad"
+    else :
+        return f"{email}@gmail.com"
+try :
+    user = input("email ra vared konid : ")
+    re = EmailInpt(user)
+    if not user[0].upper():
+        print("harf aval bayad bozorg bashad")
+    elif  user in ["@",".","-","_"]:
+        print("harf namotabar ast")
+except:
+    pass
 
 #CClear()
 #NameInpt()
