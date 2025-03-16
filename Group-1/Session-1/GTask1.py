@@ -36,62 +36,55 @@ def AgeInpt():
 
 def EmailInpt():
     #baraye gereftan vrodi email hast
-    global email
-    uinput = input("email ra vared konid  \n\n\n\n\n^__^ ")
-    if not uinput :
+    try:
+        global email
+        uinput = input("email ra vared konid  \n\n\n\n\n^__^ ")
+        if not uinput :
+            CClear()
+            print("lotfan email ra vared konid\n\n\n")
+            EmailInpt()
+        if len(uinput) <= 13 :
+            CClear()
+            print("email bayad bishtaraz 4 harf basheh\n\n\n")
+            EmailInpt()
+        elif uinput[0].isdigit():
+            CClear()
+            print("email mbayad ba adad shoro shavad\n\n\n")
+            EmailInpt()
+        elif not uinput.endswith("@gmail.com") :
+            CClear()
+            print("bayad @gmail.com ra vared konid\n\n\n")
+            EmailInpt()
+        elif uinput.count("@") != 1 :
+            CClear()
+            print("khata faghat yek @ misheh vared kard\n\n\n")
+            EmailInpt()
+        elif not any(harf.isalpha() for harf in uinput):
+            CClear()
+            print("lotfan harf vared konid\n\n\n")
+            EmailInpt()
+        elif any(char in['!','#','$','%','^','&','*',',','-','+','?','_','=','<>','/'] for char in uinput):
+             CClear()
+             print("dar email az character hay vijeh nmisheh estefade kard\n\n\n")
+             EmailInpt()
+        else :
+            CClear()
+            email = uinput
+            print(f"email shoma : {email}")
+    except:
         CClear()
-        print("lotfan email ra vared konid\n\n\n")
-        EmailInpt()
-    if len(uinput) <= 4 :
-        CClear()
-        print("email bayad bishtaraz 4 harf basheh\n\n\n")
-        EmailInpt()
-    elif uinput[0].isdigit():
-        CClear()
-        print("email mbayad ba adad shoro shavad\n\n\n")
-        EmailInpt()
-    elif not uinput.endswith("@gmail.com") :
-        CClear()
-        print("bayad @gmail.com ra vared konid\n\n\n")
-        EmailInpt()
-    elif uinput.count("@") != 1 :
-        CClear()
-        print("khata faghat yek @ misheh vared kard\n\n\n")
-        EmailInpt()
-    elif not any(harf.isalpha() for harf in uinput):
-        CClear()
-        print("lotfan harf vared konid\n\n\n")
-        EmailInpt()
-    elif any(char in['!','#','$','%','^','&','*',',','-','+','?','_','=','<>','/'] for char in uinput):
-        CClear()
-        print("dar email az character hay vijeh nmisheh estefade kard\n\n\n")
-        EmailInpt()
-    else :
-        CClear()
-        email = uinput
-        print(f"email shoma : {email}")
-        EmailInpt()
+        print(f"khatay nashenakhteh\n\n\n")
     # gmail.org453d@gmail.com
     # 23432.e.42@gmail.com
 
-    
-
-
-
-#CClear()
-#NameInpt()
-#CClear
-#AgeInpt()
-CClear()
-EmailInpt()
 
 #CClear()
 #NameInpt()
 #CClear()
-#AgeInpt()
-#CClear
 #EmailInpt()
-#CClear
+#CClear()
+#AgeInpt()
+#CClear()
 form = f"""
 
 name  : 
@@ -102,8 +95,3 @@ email :
 
        """
 
-#CClear()
-#NameInpt()
-#AgeInpt()
-#EmailInpt()
-#print(form)
