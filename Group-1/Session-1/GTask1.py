@@ -85,6 +85,13 @@ def EmailInpt():
 CClear()
 EmailInpt()
 
+#CClear()
+#NameInpt()
+#CClear()
+#AgeInpt()
+#CClear
+#EmailInpt()
+#CClear
 form = f"""
 
 name  : 
@@ -94,5 +101,9 @@ age   :
 email : 
 
        """
+
 #CClear()
+#NameInpt()
+#AgeInpt()
+#EmailInpt()
 #print(form)
