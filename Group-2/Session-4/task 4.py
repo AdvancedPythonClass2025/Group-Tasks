@@ -1,6 +1,6 @@
-class Manager(Employee):
-    def manage_team(self):
-        print(f"{self.name} در حال مدیریت تیم است.")
+class Logger:
+    def __init__(self, filename="log.txt"):
+        self.filename = filename
 
 def search_by_title(self, title):
         return [book for book in self.books if title.lower() in book["title"].lower()]
