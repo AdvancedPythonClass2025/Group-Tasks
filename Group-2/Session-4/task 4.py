@@ -2,8 +2,7 @@ class Logger:
     def __init__(self, filename="log.txt"):
         self.filename = filename
 
-def search_by_title(self, title):
-        return [book for book in self.books if title.lower() in book["title"].lower()]
-
-    def search_by_author(self, author):
-        return [book for book in self.books if author.lower() in book["author"].lower()]
+def log_activity(self, func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        with open(self.filename, "a", encoding= "utf-8") as file:
