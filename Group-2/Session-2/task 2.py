@@ -1,4 +1,7 @@
-  def search_by_title(self, title):
+class Library:
+    def __init__(self):
+        self.books = []
+def search_by_title(self, title):
         results = []
         for book in self.books:
             if title.lower() in book['title'].lower():
