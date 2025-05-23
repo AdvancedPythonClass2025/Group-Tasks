@@ -8,3 +8,7 @@ headers = {'User-Agent': 'Mozilla/5.0'}
 products_section = soup.find_all('div', class_='product-item')
 names = []
 prices = []
+
+data = {'Product Name': names, 'Price': prices}
+df = pd.DataFrame(data)
+df.to_csv('products.csv', index=False, encoding='utf-8-sig')
