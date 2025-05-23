@@ -7,3 +7,16 @@ engine = create_engine('sqlite:///students.db')
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
+
+Base.metadata.create_all(engine)
+
+student1 = Student(first_name='Ali', last_name='Ahmadi', age=16, gender='M')
+grade1 = Grade(subject='Math', score=18.5, student=student1)
+grade2 = Grade(subject='Physics', score=17.0, student=student1)
+absence1 = Absence(date='2025-05-20', reason='Sick', student=student1)
+
+session.add(student1)
+session.add(grade1)
+session.add(grade2)
+session.add(absence1)
+session.commit()
