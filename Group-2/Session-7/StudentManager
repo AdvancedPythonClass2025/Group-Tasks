@@ -8,6 +8,14 @@ Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
 
+class Grade(Base):
+    tablename = 'grades'
+    id = Column(Integer, primary_key=True)
+    subject = Column(String)
+    score = Column(Float)
+    student_id = Column(Integer, ForeignKey('students.id'))
+    student = relationship('Student', back_populates='grades')
+
 Base.metadata.create_all(engine)
 
 student1 = Student(first_name='Ali', last_name='Ahmadi', age=16, gender='M')
