@@ -1,0 +1,2 @@
+print(button1.render())
+print(button2.render())
